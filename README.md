@@ -180,8 +180,9 @@ model already knew.
 - Built with AI assistance (Claude) for the retrieval/RAG architecture,
   while I worked through and tested each part to understand what it does
   and why (see the plain-English comments throughout the code).
-- Known limitation: retrieval quality hasn't been formally benchmarked;
-  a natural next step is comparing answers against actual mark schemes.
+- Retrieval and generation quality have been benchmarked against
+  official mark schemes and cross-checked by an independent grader
+  (see Evaluation section above); remaining limitations are noted there.
 
 ## Known limitation on the AI model
 Hugging Face's free Inference API sometimes deprecates or rate-limits
