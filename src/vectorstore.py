@@ -1,6 +1,6 @@
 """
-STEP 2: turn text chunks into numbers (embeddings) and store them.
-STEP 3: given a question, find the closest-meaning chunks.
+ turn text chunks into numbers (embeddings) and store them.
+then given a question, find the closest-meaning chunks.
 
 Both steps use Chroma, a simple local database built for exactly this
 kind of "find similar text" search.
@@ -14,13 +14,9 @@ VECTOR_STORE_DIR = Path("./data/vector_store")
 
 def build_vectorstore(chunks, embeddings):
     """
-    STEP 2: for every chunk, call the embedding model to turn its text
+     for every chunk, call the embedding model to turn its text
     into a list of numbers, then save those numbers (plus the original
     text and metadata) to disk in ./data/vector_store.
-
-    You only need to run this once per set of documents — after that,
-    use load_vectorstore() instead, which is much faster since it
-    skips re-embedding everything.
     """
     return Chroma.from_documents(
         documents=chunks,
@@ -39,15 +35,11 @@ def load_vectorstore(embeddings):
 
 def get_retriever(vectorstore, topic: str | None = None, past_papers_only: bool = False, k: int = 4):
     """
-    STEP 3: build a "retriever" — something you can hand a question to,
+     build a "retriever" — something you can hand a question to,
     and it returns the k closest-matching chunks.
 
-    If `topic` is set (e.g. "algorithms"), only chunks tagged with that
-    topic are searched — this is what lets you say "only quiz me on
-    networks" instead of searching your whole syllabus every time.
-
     If `past_papers_only` is True, it only searches chunks that came
-    from a file with "paper" in its name — useful for the quiz feature.
+    from a file with "paper" in its name — useful for the quiz feature and vise versa 
     """
     filters = {}
     if topic:
