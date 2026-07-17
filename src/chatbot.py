@@ -4,9 +4,8 @@ back an answer that's grounded in your actual textbook/past papers
 instead of the model just guessing from general knowledge.
 
 Two modes:
-- "explain": normal Q&A, e.g. "what is Big-O notation?"
-- "quiz": the model picks a real past-paper-style question from the
-  retrieved chunks and asks YOU, instead of answering for you.
+- "explain"
+- "quiz"
 """
 
 import os
